@@ -10,6 +10,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const emailRouter = require('./routes/email.router');
 const imageUrlRouter = require('./routes/image-url.router');
 const UploaderS3Router = require('react-dropzone-s3-uploader/s3router');
 
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/email', emailRouter);
 app.use('/api/imageurl', imageUrlRouter);
 
 app.use('/s3', UploaderS3Router({
