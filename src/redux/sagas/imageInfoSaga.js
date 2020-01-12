@@ -13,8 +13,8 @@ function* postImageUrl(action) {
             imageUrl: action.payload
         }
 
-        const response = yield axios.post('/api/imageurl', data, config);
-        console.log(response);
+        yield axios.post('/api/imageurl', data, config);
+        yield put({type: 'GET_IMAGE'})
     } catch (error) {
         console.log('Image URL post failed', error);
     }
